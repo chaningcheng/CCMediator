@@ -20,11 +20,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // 核心思路:
-    // Interface: 协议
-    // Module: 协议的实现
-    // CCMediator+Category: 调用实现了的协议
-    // CCMediator: 分发对象消息
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
