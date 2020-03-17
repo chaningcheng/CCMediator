@@ -1,0 +1,19 @@
+source 'https://cdn.cocoapods.org/'
+
+use_frameworks!
+inhibit_all_warnings!
+platform :ios, '10.0'
+
+install! 'cocoapods',
+:generate_multiple_pod_projects => true,
+:incremental_installation => true
+
+target 'CCMediator_Example' do
+  pod 'CCMediator', :path => '../'
+
+  target 'CCMediator_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

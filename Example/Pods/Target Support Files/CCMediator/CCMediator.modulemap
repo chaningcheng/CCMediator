@@ -1,0 +1,6 @@
+framework module CCMediator {
+  umbrella header "CCMediator-umbrella.h"
+
+  export *
+  module * { export * }
+}

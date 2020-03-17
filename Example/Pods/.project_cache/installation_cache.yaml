@@ -1,0 +1,34 @@
+BUILD_CONFIGURATIONS:
+  Debug: :debug
+  Release: :release
+CACHE_KEYS:
+  CCMediator:
+    BUILD_SETTINGS_CHECKSUM:
+      CCMediator:
+        :debug: 58c2e7b7689fedbba368031d422c3e6a
+        :release: 58c2e7b7689fedbba368031d422c3e6a
+    CHECKSUM: 0c64e953b1cbec506ece01516027007f136bff52
+    FILES:
+      - "../../CCMediator/Classes/CCMediator.h"
+      - "../../CCMediator/Classes/CCMediator.m"
+      - "../../CCMediator/Classes/Interface/CCMediator+CCWebInterface.h"
+      - "../../CCMediator/Classes/Interface/CCMediator+CCWebInterface.m"
+      - "../../CCMediator/Classes/NSURL+Category.h"
+      - "../../CCMediator/Classes/NSURL+Category.m"
+      - "../../LICENSE"
+      - "../../README.md"
+    PROJECT_NAME: CCMediator
+    SPECS:
+      - CCMediator (0.1.0)
+  Pods-CCMediator_Example:
+    BUILD_SETTINGS_CHECKSUM:
+      Debug: 37491e756aecba40844ed6537f96e61d
+      Release: 37491e756aecba40844ed6537f96e61d
+  Pods-CCMediator_Tests:
+    BUILD_SETTINGS_CHECKSUM:
+      Debug: 4203b14b738db85279591712c83f4df9
+      Release: 4203b14b738db85279591712c83f4df9
+OBJECT_VERSION: 46
+PLUGINS:
+  cocoapods-stats:
+    {}

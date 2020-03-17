@@ -1,0 +1,12 @@
+CCMediator:
+  LABEL: CCMediator
+  PROJECT_PATH: CCMediator.xcodeproj
+  UUID: AFFE62E7E0CC04E7073018C2CF1170DD
+Pods-CCMediator_Example:
+  LABEL: Pods-CCMediator_Example
+  PROJECT_PATH: Pods.xcodeproj
+  UUID: 8F92F9034EF04BE38F9336EFD4FE51FA
+Pods-CCMediator_Tests:
+  LABEL: Pods-CCMediator_Tests
+  PROJECT_PATH: Pods.xcodeproj
+  UUID: 863FCB5C3C47145681BA295F00BB3BA1

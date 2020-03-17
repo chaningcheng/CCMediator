@@ -1,0 +1,16 @@
+PODS:
+  - CCMediator (0.1.0)
+
+DEPENDENCIES:
+  - CCMediator (from `../`)
+
+EXTERNAL SOURCES:
+  CCMediator:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  CCMediator: 0c64e953b1cbec506ece01516027007f136bff52
+
+PODFILE CHECKSUM: 50c49501e23d4231d585fbef95aea4fe770852da
+
+COCOAPODS: 1.9.0.beta.3

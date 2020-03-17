@@ -1,0 +1,6 @@
+framework module Pods_CCMediator_Tests {
+  umbrella header "Pods-CCMediator_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

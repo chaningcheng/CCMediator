@@ -1,0 +1,28 @@
+{
+  "name": "CCMediator",
+  "version": "0.1.0",
+  "summary": "A short description of CCMediator.",
+  "description": "Mediator Explore",
+  "homepage": "https://github.com/chaningcheng/CCMediator",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "chaningcheng": "simon_ccheng@vipabc.com"
+  },
+  "source": {
+    "git": "https://github.com/chaningcheng/CCMediator.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "10.0"
+  },
+  "public_header_files": "CCMediator/Classes/**/*.h",
+  "source_files": "CCMediator/Classes/**/*",
+  "resource_bundles": {
+    "CCMediator": [
+      "CCMediator/Assets/*.png"
+    ]
+  }
+}
