@@ -48,14 +48,14 @@ static CCMediator *mediator;
             result = [self performTarget:URL.host
                                   action:action];
         }
-    } else { // 加载 webview
+    } else { // load custom webview controller
         result = [self loadWebViewControllerWithURL:URL];
     }
     return result;
 }
 
 - (id)performTarget:(NSString *)targetName action:(NSString *)actionName {
-    [self performTarget:targetName action:actionName parameter:nil];
+    return [self performTarget:targetName action:actionName parameter:nil];
 }
 
 - (id)performTarget:(NSString *)targetName action:(NSString *)actionName parameter:(NSDictionary *)parameter {
@@ -83,14 +83,59 @@ static CCMediator *mediator;
     }
 }
 
++ (UIViewController *)visibleViewController {
+    UIViewController *rootViewController = UIApplication.sharedApplication.keyWindow.rootViewController;
+    while (rootViewController.presentedViewController) {
+        rootViewController = rootViewController.presentedViewController;
+    }
+    if ([rootViewController isKindOfClass:UITabBarController.class]) {
+        UITabBarController *tabBar = (UITabBarController *)rootViewController;
+        rootViewController = tabBar.selectedViewController;
+    }
+    if ([rootViewController isKindOfClass:UINavigationController.class]) {
+        UINavigationController *navi = (UINavigationController *)rootViewController;
+        rootViewController = navi.visibleViewController;
+    }
+    return rootViewController;
+}
+
++ (void)dismissAllPresentedViewControllersAnimated:(BOOL)animated
+                                        completion:(void (^ _Nullable)(void))completion {
+    UIViewController *rootViewController = UIApplication.sharedApplication.keyWindow.rootViewController;
+    UIViewController *visibleViewController = [self visibleViewController];
+    
+    BOOL rootStack = NO;
+    if ([rootViewController isKindOfClass:[UITabBarController class]]) {
+        UITabBarController *tabBar = (UITabBarController *)rootViewController;
+        rootStack = ([tabBar.childViewControllers containsObject:visibleViewController] ||
+                     [tabBar.childViewControllers containsObject:visibleViewController.navigationController]);
+    } else if ([rootViewController isKindOfClass:UINavigationController.class]) {
+        UINavigationController *navi = (UINavigationController *)rootViewController;
+        rootStack = [navi.childViewControllers containsObject:visibleViewController];
+    } else {
+        rootStack = (visibleViewController == rootViewController);
+    }
+    if (rootStack == NO) {
+        [visibleViewController dismissViewControllerAnimated:animated completion:^{
+            [self dismissAllPresentedViewControllersAnimated:animated completion:completion];
+        }];
+    } else {
+        if (completion) {
+            completion();
+        }
+    }
+}
+
 #pragma mark - internal
 - (id)performTarget:(NSObject *)target selector:(SEL)selector parameter:(NSDictionary *)parameter {
     NSMethodSignature *methodSignature = [target methodSignatureForSelector:selector];
     if (methodSignature) {
         const char *methodReturnType = [methodSignature methodReturnType];
         NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:methodSignature];
-        [invocation setArgument:&parameter
-                        atIndex:2];
+        if (parameter) {
+            [invocation setArgument:&parameter
+                            atIndex:2];
+        }
         invocation.selector = selector;
         invocation.target = target;
         if (strcmp(methodReturnType, @encode(void)) == 0) {
@@ -117,7 +162,13 @@ static CCMediator *mediator;
             [invocation getReturnValue:&result];
             return @(result);
         } else {
-            return [target performSelector:selector withObject:parameter];
+            id result;
+            if (parameter) {
+                result = [target performSelector:selector withObject:parameter];
+            } else {
+                result = [target performSelector:selector];
+            }
+            return result;
         }
     } else {
         return nil;

@@ -17,4 +17,9 @@
     return vc;
 }
 
+- (UIViewController *)presentDemoModuleViewController {
+    CCDemoModuleViewController *vc = CCDemoModuleViewController.new;
+    return vc;
+}
+
 @end

@@ -9,7 +9,6 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-/// 类型
 typedef NS_ENUM(NSUInteger, CCMediatorType) {
     CCMediatorTypeNative,
     CCMediatorTypeWeb,
@@ -26,20 +25,29 @@ FOUNDATION_EXTERN NSString *const CCMEDIATOR_SCHEME_HTTP;
 
 + (void)unMediator;
 
-/// 通过 URL 调用其他模块
-/// @param URL 对应模块的 url eg: xxxx://target/action?name=cc
+/// use URL open module
+/// @param URL eg: xxxx://target/action?name=cc
 - (id)performActionWithURL:(NSURL *)URL;
 
-/// 通过 runtime 动态调用其他模块
-/// @param target 模块名称
-/// @param action 模块需要做的事情
+/// use target action open module
+/// @param target module name
+/// @param action action required by modele
 - (id)performTarget:(NSString *)target action:(NSString *)action;
 
-/// 通过 runtime 动态调用其他模块
-/// @param target 模块名称
-/// @param action 模块需要做的事情
-/// @param parameter 模块需要的参数
+/// use target action open module with parameter
+/// @param target module name
+/// @param action action required by modele
+/// @param parameter parameter required by module
 - (id)performTarget:(NSString *)target action:(NSString *)action parameter:(NSDictionary *)parameter;
+
+/// current screen view controller
++ (UIViewController *)visibleViewController;
+
+/// dismiss all presented viewcontroller
+/// @param animated animated or not
+/// @param completion completion action
++ (void)dismissAllPresentedViewControllersAnimated:(BOOL)animated
+                                        completion:(void (^ _Nullable)(void))completion;
 
 @end
 

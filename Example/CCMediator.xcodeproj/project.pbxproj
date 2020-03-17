@@ -28,6 +28,7 @@
 		DCD9BF52242070C8001815EF /* CCWKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD9BF50242070C8001815EF /* CCWKViewController.m */; };
 		DCD9BF59242070D1001815EF /* CCDemoModule.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD9BF56242070D1001815EF /* CCDemoModule.m */; };
 		DCD9BF5C24207114001815EF /* CCDemoModuleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD9BF5B24207114001815EF /* CCDemoModuleViewController.m */; };
+		DCD9BF642420A77C001815EF /* CCMediator+CCDemoInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD9BF632420A77C001815EF /* CCMediator+CCDemoInterface.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +79,8 @@
 		DCD9BF57242070D1001815EF /* CCDemoModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCDemoModule.h; sourceTree = "<group>"; };
 		DCD9BF5A24207114001815EF /* CCDemoModuleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCDemoModuleViewController.h; sourceTree = "<group>"; };
 		DCD9BF5B24207114001815EF /* CCDemoModuleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCDemoModuleViewController.m; sourceTree = "<group>"; };
+		DCD9BF622420A77C001815EF /* CCMediator+CCDemoInterface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CCMediator+CCDemoInterface.h"; sourceTree = "<group>"; };
+		DCD9BF632420A77C001815EF /* CCMediator+CCDemoInterface.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CCMediator+CCDemoInterface.m"; sourceTree = "<group>"; };
 		E4E08C8511AA59314CC6E9D5 /* Pods_CCMediator_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CCMediator_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -149,6 +152,7 @@
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
 				6003F5A5195388D20070C39A /* CCViewController.h */,
 				6003F5A6195388D20070C39A /* CCViewController.m */,
+				DCD9BF612420A6CD001815EF /* Interface(CCDemoModule) */,
 				DCD9BF4B24207076001815EF /* CCDemoModule */,
 				DCD9BF4A2420706E001815EF /* CCWebModule */,
 				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
@@ -215,7 +219,7 @@
 			children = (
 				DCD9BF4F242070C8001815EF /* CCWKViewController.h */,
 				DCD9BF50242070C8001815EF /* CCWKViewController.m */,
-				DCD9BF4C242070C8001815EF /* Module */,
+				DCD9BF4C242070C8001815EF /* TargetAction */,
 			);
 			path = CCWebModule;
 			sourceTree = "<group>";
@@ -225,27 +229,36 @@
 			children = (
 				DCD9BF5A24207114001815EF /* CCDemoModuleViewController.h */,
 				DCD9BF5B24207114001815EF /* CCDemoModuleViewController.m */,
-				DCD9BF55242070D1001815EF /* Module */,
+				DCD9BF55242070D1001815EF /* TargetAction */,
 			);
 			path = CCDemoModule;
 			sourceTree = "<group>";
 		};
-		DCD9BF4C242070C8001815EF /* Module */ = {
+		DCD9BF4C242070C8001815EF /* TargetAction */ = {
 			isa = PBXGroup;
 			children = (
 				DCD9BF4D242070C8001815EF /* CCWebModule.m */,
 				DCD9BF4E242070C8001815EF /* CCWebModule.h */,
 			);
-			path = Module;
+			path = TargetAction;
 			sourceTree = "<group>";
 		};
-		DCD9BF55242070D1001815EF /* Module */ = {
+		DCD9BF55242070D1001815EF /* TargetAction */ = {
 			isa = PBXGroup;
 			children = (
 				DCD9BF56242070D1001815EF /* CCDemoModule.m */,
 				DCD9BF57242070D1001815EF /* CCDemoModule.h */,
 			);
-			path = Module;
+			path = TargetAction;
+			sourceTree = "<group>";
+		};
+		DCD9BF612420A6CD001815EF /* Interface(CCDemoModule) */ = {
+			isa = PBXGroup;
+			children = (
+				DCD9BF622420A77C001815EF /* CCMediator+CCDemoInterface.h */,
+				DCD9BF632420A77C001815EF /* CCMediator+CCDemoInterface.m */,
+			);
+			path = "Interface(CCDemoModule)";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -417,6 +430,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DCD9BF52242070C8001815EF /* CCWKViewController.m in Sources */,
+				DCD9BF642420A77C001815EF /* CCMediator+CCDemoInterface.m in Sources */,
 				6003F59E195388D20070C39A /* CCAppDelegate.m in Sources */,
 				6003F5A7195388D20070C39A /* CCViewController.m in Sources */,
 				DCD9BF51242070C8001815EF /* CCWebModule.m in Sources */,

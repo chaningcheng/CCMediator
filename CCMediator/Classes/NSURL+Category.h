@@ -12,10 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NSURL (Category)
 
-// 解析 url scheme
 - (CCMediatorType)parseUrlScheme;
 
-// 解析 url query
 - (NSDictionary *)parseUrlQuery;
 
 @end
