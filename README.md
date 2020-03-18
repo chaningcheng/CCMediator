@@ -10,13 +10,13 @@
 * CCMediator: 分发对象消息
 
 ### 对比
-对比		|target  action  | register route
------		|------------	    | -------------
-swift		| 支持   		    | 不支持
-open URL      | 支持	          ｜支持
-内存常驻  	| 不需要            ｜ 需要
-open 方式 	| 可以定制   	  ｜ 不可以定制
-返回参数        | 支持                 | 不支持
+对比		| target  action  	| register route
+-----		| -------------		| -------------
+swift 解耦	| 支持   		    	| 不支持
+open URL  | 支持	          	| 支持
+内存常驻  	| 不需要         		| 需要
+open 方式 	| 可以定制   	  		| 不可以定制
+返回参数  	| 支持          		| 不支持
 
 ### 注意点：
 * 关于 `webview` 参考注册路由打开方法，提供了默认的 `interface` 
