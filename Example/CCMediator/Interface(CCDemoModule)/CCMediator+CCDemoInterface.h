@@ -12,9 +12,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface CCMediator (CCDemoInterface)
 
-- (UIViewController *)pushDemoModuleViewControllerWithParameter:(NSDictionary *)parameter;
+- (UIViewController *)pushDemoModuleViewController:(NSDictionary *)parameter;
 
-- (void)mediatorPresentDemoModuleViewController;
+- (void)presentDemoModuleViewController;
+
+- (void)callbackDemoModuleViewController:(void (^)(NSDictionary *))callBack;
 
 @end
 

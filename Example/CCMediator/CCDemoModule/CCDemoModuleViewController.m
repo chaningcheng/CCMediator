@@ -19,7 +19,22 @@
     
     self.view.backgroundColor = UIColor.orangeColor;
     
-    NSLog(@"CCDemoModuleViewController - parameter: %@", self.parameter);
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"parameter"
+                                                                   message:[NSString stringWithFormat:@"%@", self.parameter]
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *action = [UIAlertAction actionWithTitle:@"确定"
+                                                     style:UIAlertActionStyleDefault
+                                                   handler:nil];
+    [alert addAction:action];
+    [self presentViewController:alert
+                       animated:YES
+                     completion:nil];
+}
+
+- (void)dealloc {
+    if (self.callBack) {
+        self.callBack(@{@"name" : @"cxxc"});
+    }
 }
 
 @end

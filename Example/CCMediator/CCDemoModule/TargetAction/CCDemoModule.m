@@ -22,4 +22,10 @@
     return vc;
 }
 
+- (UIViewController *)callbackDemoModuleViewController:(NSDictionary *)parameter {
+    CCDemoModuleViewController *vc = CCDemoModuleViewController.new;
+    vc.callBack = parameter[@"callBack"];
+    return vc;
+}
+
 @end

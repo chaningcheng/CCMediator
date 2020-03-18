@@ -37,11 +37,24 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row == 0) {
-        UIViewController *vc = [CCMediator.mediator pushDemoModuleViewControllerWithParameter:@{@"name" : @"cc"}];
+        UIViewController *vc = [CCMediator.mediator pushDemoModuleViewController:@{@"name" : @"cc"}];
         [self.navigationController pushViewController:vc animated:YES];
     } else if (indexPath.row == 1) {
-        [CCMediator.mediator mediatorPresentDemoModuleViewController];
+        [CCMediator.mediator presentDemoModuleViewController];
     } else if (indexPath.row == 2) {
+        [CCMediator.mediator callbackDemoModuleViewController:^(NSDictionary * _Nonnull parameter) {
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"target action parameter"
+                                                                           message:[NSString stringWithFormat:@"%@", parameter]
+                                                                    preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction *action = [UIAlertAction actionWithTitle:@"确定"
+                                                             style:UIAlertActionStyleDefault
+                                                           handler:nil];
+            [alert addAction:action];
+            [self presentViewController:alert
+                               animated:YES
+                             completion:nil];
+        }];
+    } else if (indexPath.row == 3) {
         NSURL *url = [NSURL URLWithString:@"cxxc://CCDemoModule/pushDemoModuleViewController:?name=cc"];
         UIViewController *vc = [CCMediator.mediator performActionWithURL:url];
         [self.navigationController pushViewController:vc animated:YES];
@@ -66,8 +79,9 @@
 }
 
 - (NSArray<NSString *> *)dataSource {
-    return @[@"target - action open external",
-             @"target - action open internal",
+    return @[@"target action open external",
+             @"target action open internal",
+             @"target action call back",
              @"native URL open",
              @"web URL open"];
 }

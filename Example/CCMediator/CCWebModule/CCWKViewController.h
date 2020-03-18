@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface CCWKViewController : UIViewController
 
 @property (nonatomic, strong) NSURL *URL;
-@property (nonatomic, strong) NSDictionary *parameter;
+@property (nonatomic, copy  ) NSDictionary *parameter;
 
 @end
 

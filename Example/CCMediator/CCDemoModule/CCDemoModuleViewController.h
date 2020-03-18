@@ -12,7 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface CCDemoModuleViewController : UIViewController
 
-@property (nonatomic, strong) NSDictionary *parameter;
+@property (nonatomic, copy) NSDictionary *parameter;
+@property (nonatomic, copy) void(^callBack)(NSDictionary *);
 
 @end
 

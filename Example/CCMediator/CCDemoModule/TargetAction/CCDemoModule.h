@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (UIViewController *)pushDemoModuleViewController:(NSDictionary *)parameter;
 - (UIViewController *)presentDemoModuleViewController;
+- (UIViewController *)callbackDemoModuleViewController:(NSDictionary *)parameter;
 
 @end
 

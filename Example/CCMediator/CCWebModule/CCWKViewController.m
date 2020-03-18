@@ -24,7 +24,16 @@
     [self.view addSubview:self.webView];
     [self.webView loadRequest:[NSURLRequest requestWithURL:self.URL]];
     
-    NSLog(@"CCWKViewController - parameter: %@", self.parameter);
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"parameter"
+                                                                   message:[NSString stringWithFormat:@"%@", self.parameter]
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *action = [UIAlertAction actionWithTitle:@"确定"
+                                                     style:UIAlertActionStyleDefault
+                                                   handler:nil];
+    [alert addAction:action];
+    [self presentViewController:alert
+                       animated:YES
+                     completion:nil];
 }
 
 - (WKWebView *)webView {
